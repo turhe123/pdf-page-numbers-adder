@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO:START — the builder rewrites title / description / keywords for search (see CLAUDE.md) -->
+  <title>Add Page Numbers to PDF – Free, Private, No Upload</title>
+  <meta name="description" content="Add page numbers to a PDF in your browser: choose position, format (Page 1 of N, roman), start number and font. Free, no upload, no limits, works offline.">
+  <meta name="keywords" content="add page numbers to pdf, number pdf pages, pdf page numbering online, insert page numbers pdf free, page x of y pdf, bates numbering pdf, offline pdf page numbers">
+  <!-- SEO:END -->
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0f14" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://turhe123.github.io/pdf-page-numbers-adder/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PDF Page Number Adder – Free, Private, In Your Browser">
+  <meta property="og:description" content="Stamp page numbers on any PDF in your browser, with position, format and start number, no upload. Free and open source, nothing is uploaded, works offline.">
+  <meta property="og:url" content="https://turhe123.github.io/pdf-page-numbers-adder/">
+  <meta property="og:image" content="https://turhe123.github.io/pdf-page-numbers-adder/docs/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="PDF Page Number Adder">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PDF Page Number Adder – Free, Private, In Your Browser">
+  <meta name="twitter:description" content="Stamp page numbers on any PDF in your browser, with position, format and start number, no upload. Free and open source, nothing is uploaded, works offline.">
+  <meta name="twitter:image" content="https://turhe123.github.io/pdf-page-numbers-adder/docs/og.png">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PDF Page Number Adder",
+    "alternateName": "PDF Page Number Adder – Free, Private, In Your Browser",
+    "description": "Stamp page numbers on any PDF in your browser, with position, format and start number, no upload. Free and open source, nothing is uploaded, works offline.",
+    "url": "https://turhe123.github.io/pdf-page-numbers-adder/",
+    "image": "https://turhe123.github.io/pdf-page-numbers-adder/docs/og.png",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript. Works offline after the first visit.",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "license": "https://opensource.org/licenses/MIT",
+    "softwareVersion": "1.0.0",
+    "author": { "@type": "Person", "name": "Or Davidai Bachar", "url": "https://github.com/turhe123" },
+    "sameAs": ["https://github.com/turhe123/pdf-page-numbers-adder"]
+  }
+  </script>
+  <script src="vendor/pdf-lib/pdf-lib.min.js" defer></script>
+  <!-- Page views are counted with GoatCounter: no cookies, no personal data, open source. -->
+  <script data-goatcounter="https://turhe123.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#tool">Skip to the tool</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./" aria-label="PDF Page Number Adder home">
+        <img class="brand__icon" src="icon.svg" alt="" width="28" height="28">
+        <span class="brand__name">PDF Page Number Adder</span>
+      </a>
+      <nav class="site-nav" aria-label="Page">
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://github.com/turhe123/pdf-page-numbers-adder" rel="noopener">GitHub</a>
+        <a href="https://turhe123.github.io/web-tools/" rel="noopener" class="site-nav__more">More tools</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container">
+      <!-- HERO:START — the builder may refine the headline and promise; keep the trust badges -->
+      <h1 class="hero__title">PDF Page Number Adder</h1>
+      <p class="hero__lead">Stamp page numbers on any PDF in your browser, with position, format and start number, no upload.</p>
+      <!-- HERO:END -->
+      <ul class="badges" aria-label="Why this tool is safe to use">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4 3 7 7 9 4-2 7-5 7-9V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Runs in your browser, files never leave your device</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Free, open source, no account, no ads</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Works offline after the first visit</li>
+      </ul>
+    </section>
+
+    <section class="container" id="tool" aria-labelledby="tool-title">
+      <div class="tool-card">
+        <!-- TOOL:START — the builder replaces everything between these markers with the real tool UI -->
+        <h2 id="tool-title" class="visually-hidden">Add page numbers to a PDF</h2>
+        <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose a PDF or drop it here">
+          <label class="visually-hidden" for="file-input">Choose a PDF</label>
+          <input class="dropzone__input" id="file-input" type="file" accept=".pdf,application/pdf" multiple aria-describedby="dropzone-hint">
+          <svg class="dropzone__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0-4 4m4-4 4 4M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p class="dropzone__title" id="dropzone-title">Drop a PDF here or <span class="link">choose a PDF</span></p>
+          <p class="dropzone__hint" id="dropzone-hint">One PDF at a time. Nothing is uploaded, numbering happens on this device.</p>
+        </div>
+
+        <div class="pn" id="workspace" hidden>
+          <figure class="pn__preview">
+            <div class="preview pn__stage">
+              <canvas id="preview-canvas" width="300" height="400" role="img" aria-label="Preview of the page with its number"></canvas>
+            </div>
+            <div class="pn__stepper">
+              <button class="btn btn--small" id="prev-page" type="button" aria-label="Previous page">‹ Prev</button>
+              <span class="pn__indicator stat" id="page-indicator" aria-live="polite">Page 1 / 1</span>
+              <button class="btn btn--small" id="next-page" type="button" aria-label="Next page">Next ›</button>
+            </div>
+            <figcaption class="pn__caption">Label on this page: <strong id="preview-label">1</strong></figcaption>
+            <p class="field__hint pn__keys">Tip: <span class="kbd">←</span> <span class="kbd">→</span> change the preview page.</p>
+          </figure>
+
+          <div class="pn__options">
+            <p class="pn__file"><strong id="file-name"></strong> <span class="field__hint" id="file-info"></span></p>
+
+            <fieldset class="pn__fieldset">
+              <legend class="field__label">Position</legend>
+              <div class="pn__pos" role="radiogroup" aria-label="Position on the page">
+                <input type="radio" name="pos" id="pos-0" value="0" aria-label="Top left"><label for="pos-0" title="Top left"></label>
+                <input type="radio" name="pos" id="pos-1" value="1" aria-label="Top center"><label for="pos-1" title="Top center"></label>
+                <input type="radio" name="pos" id="pos-2" value="2" aria-label="Top right"><label for="pos-2" title="Top right"></label>
+                <input type="radio" name="pos" id="pos-3" value="3" aria-label="Middle left"><label for="pos-3" title="Middle left"></label>
+                <input type="radio" name="pos" id="pos-4" value="4" aria-label="Middle center"><label for="pos-4" title="Middle center"></label>
+                <input type="radio" name="pos" id="pos-5" value="5" aria-label="Middle right"><label for="pos-5" title="Middle right"></label>
+                <input type="radio" name="pos" id="pos-6" value="6" aria-label="Bottom left"><label for="pos-6" title="Bottom left"></label>
+                <input type="radio" name="pos" id="pos-7" value="7" aria-label="Bottom center" checked><label for="pos-7" title="Bottom center"></label>
+                <input type="radio" name="pos" id="pos-8" value="8" aria-label="Bottom right"><label for="pos-8" title="Bottom right"></label>
+              </div>
+              <span class="field__hint" id="pos-name">Bottom center</span>
+            </fieldset>
+
+            <div class="pn__fields">
+              <div class="field pn__wide">
+                <label for="format">Format</label>
+                <select id="format">
+                  <option value="n">1, 2, 3</option>
+                  <option value="page">Page 1</option>
+                  <option value="nofn">1 of N</option>
+                  <option value="pagenofn">Page 1 of N</option>
+                  <option value="roman">i, ii, iii (roman)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="start">Start number</label>
+                <input type="number" id="start" value="1" min="0" max="999999" step="1" inputmode="numeric">
+              </div>
+              <div class="field">
+                <label for="first-page">First page to number</label>
+                <input type="number" id="first-page" value="1" min="1" step="1" inputmode="numeric">
+              </div>
+              <label class="check pn__wide"><input type="checkbox" id="skip-first"> Skip the first page (cover)</label>
+              <label class="check pn__wide"><input type="checkbox" id="mirror"> Mirror for double sided (swap left and right on even pages)</label>
+              <div class="field pn__wide">
+                <label for="prefix">Prefix text <span class="field__hint">(optional)</span></label>
+                <input type="text" id="prefix" maxlength="40" placeholder="e.g. Doc 7" autocomplete="off" aria-describedby="prefix-hint">
+                <span class="field__hint" id="prefix-hint">Latin letters, digits and common punctuation only (standard PDF fonts).</span>
+              </div>
+              <div class="field">
+                <label for="font">Font</label>
+                <select id="font">
+                  <option value="helvetica">Helvetica</option>
+                  <option value="times">Times</option>
+                  <option value="courier">Courier</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="size">Font size (pt)</label>
+                <input type="number" id="size" value="11" min="4" max="72" step="1" inputmode="numeric">
+              </div>
+              <div class="field">
+                <label for="margin">Margin (mm)</label>
+                <input type="number" id="margin" value="12" min="0" max="100" step="1" inputmode="decimal">
+              </div>
+              <div class="field">
+                <label for="color">Color</label>
+                <input type="color" id="color" value="#333333" class="pn__color">
+              </div>
+            </div>
+
+            <button class="btn btn--primary btn--block" id="apply" type="button">Apply and download</button>
+            <div class="pn__progress" id="progress-wrap" hidden>
+              <div class="progress" role="progressbar" aria-labelledby="progress-text" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress"><span></span></div>
+              <p class="field__hint" id="progress-text" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="results" id="results" aria-live="polite"></div>
+        <!-- TOOL:END -->
+      </div>
+    </section>
+
+    <section class="container section" id="how" aria-labelledby="how-title">
+      <h2 id="how-title" class="section__title">How it works</h2>
+      <!-- HOW:START — three honest steps for this tool -->
+      <ol class="steps">
+        <li><strong>Open your PDF.</strong> Drop it on the page or pick it. The file is read in this browser tab and never uploaded.</li>
+        <li><strong>Place the numbers.</strong> Choose position, format, start number, font, size, margin and color. The page preview updates as you go; use the arrow keys to check other pages.</li>
+        <li><strong>Apply and download.</strong> Each page gets its label drawn with a standard PDF font, and you save a copy named <em>yourfile_numbered.pdf</em>. The original stays untouched.</li>
+      </ol>
+      <!-- HOW:END -->
+    </section>
+
+    <section class="container section" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="section__title">Questions, answered</h2>
+      <!-- FAQ:START — 4 to 6 questions; keep the privacy, offline and AI answers -->
+      <details class="faq" open>
+        <summary>Are my files uploaded anywhere?</summary>
+        <p>No. PDF Page Number Adder runs entirely in your browser. Your PDF is read into memory on your device, numbered with JavaScript, and never sent to a server. That matters for legal bundles, theses and contracts. You can disconnect from the internet and it keeps working.</p>
+      </details>
+      <details class="faq">
+        <summary>Is it really free, and does it work offline?</summary>
+        <p>Yes, it is free and open source under the MIT license, with no account, no ads, no hourly task limit and no page limit; the only limit is your device's memory. After your first visit the page is cached by a service worker, so it loads and works without a connection, and you can install it from your browser's menu as an app. If it saves you a paid subscription, you can say thanks on Ko-fi.</p>
+      </details>
+      <details class="faq">
+        <summary>Can I skip the cover page or start from a different number?</summary>
+        <p>Yes. Tick "Skip the first page", or set "First page to number" to start later in the document, and set "Start number" to any value (for example 10 to continue a previous volume). With "1 of N", N counts only the numbered pages, so a skipped cover does not make the total wrong.</p>
+      </details>
+      <details class="faq">
+        <summary>Does it work with landscape, rotated or cropped pages?</summary>
+        <p>Yes. The position is measured from the visible crop box, and on rotated pages the coordinates are turned so the number reads upright where you expect it. The preview is a simple outline of each page with the label drawn to scale, not a full rendering of its content.</p>
+      </details>
+      <details class="faq">
+        <summary>Can it number password-protected PDFs or non-Latin text?</summary>
+        <p>Encrypted PDFs are not supported; remove the password in the app that created the file first. Labels use the standard PDF fonts (Helvetica, Times, Courier), which cover Latin characters only, so the prefix field warns you about anything else.</p>
+      </details>
+      <details class="faq">
+        <summary>Was this written by AI?</summary>
+        <p>Yes. PDF Page Number Adder was generated by Claude Code from a written specification inside an automated pipeline, with a test suite that runs in a real browser. The full source is on GitHub, so you can read every line before you trust it with your files.</p>
+      </details>
+      <!-- FAQ:END -->
+    </section>
+
+    <section class="container section" id="support">
+      <div class="support-card">
+        <h2 class="section__title">Built by one person, given away for free</h2>
+        <p>PDF Page Number Adder is a free alternative to paid tools like Sejda Add Page Numbers and PDF24. If it earns a place in your bookmarks, a coffee keeps the updates coming.</p>
+        <a class="btn btn--kofi" href="https://ko-fi.com/leodavidai" rel="noopener">☕ Support Or on Ko-fi</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__links">
+        <a href="https://github.com/turhe123/pdf-page-numbers-adder" rel="noopener">Source on GitHub</a> ·
+        <a href="https://github.com/turhe123/pdf-page-numbers-adder/issues" rel="noopener">Report a bug</a> ·
+        <a href="https://turhe123.github.io/web-tools/" rel="noopener">More free web tools</a> ·
+        <a href="https://ko-fi.com/leodavidai" rel="noopener">Ko-fi</a>
+      </p>
+      <p class="site-footer__disclosure"><strong>Built with AI.</strong> PDF Page Number Adder was written by Claude Code inside an automated pipeline from a plain-English spec, as a clean-room implementation: no code or assets from any commercial product. It runs entirely in your browser, makes no network requests except an anonymous, cookieless page-view count, and has had less human review than hand-written software. Bug reports and pull requests are welcome.</p>
+      <p class="site-footer__copy">© 2026 Or Davidai Bachar · MIT License · <span id="sw-status" class="sw-status" aria-live="polite"></span></p>
+    </div>
+  </footer>
+
+  <script type="module" src="site.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
